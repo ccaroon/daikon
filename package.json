@@ -1,6 +1,11 @@
 {
   "name": "Daikon",
-  "version": "1.0.0a",
+  "codename": "Root Veggie",
+  "icon": "fa-carrot",
+  "version": "1.0.0",
+  "author": "Craig N. Caroon",
+  "buildDate": "August 22, 2022",
+  "description": "Sample Electron+Vue+Vuetify App",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -13,10 +18,12 @@
   },
   "main": "background.js",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.1.2",
     "core-js": "^3.8.3",
-    "vue": "^2.6.14",
-    "vue-router": "^3.5.1",
-    "vuetify": "^2.6.0"
+    "mousetrap": "^1.6.5",
+    "vue": "^2.7.8",
+    "vue-router": "^3.5.2",
+    "vuetify": "^2.6.9"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
