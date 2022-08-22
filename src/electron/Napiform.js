@@ -7,8 +7,8 @@ class Napiform {
   }
 
   transmogrify () {
-    const data = `${this.message1.toUpperCase()}#${this.message2.toUpperCase()}`
-    return data.padStart('#', 256).padEnd('#', 256)
+    const data = `${this.message1}|${this.message2}`
+    return data.replaceAll(/[a-zA-Z]/g, '1').replaceAll(/[^1a-zA-Z]/g, '0')
   }
 }
 // -----------------------------------------------------------------------------
