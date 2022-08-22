@@ -3,7 +3,7 @@
     <v-navigation-drawer v-model="drawer" app dark mini-variant clipped>
       <v-list dense>
         <v-list-item
-          v-for="(page, index) in menu_main"
+          v-for="(page, index) in menuMain"
           @click="goTo(page)"
           :key="index"
         >
@@ -15,7 +15,7 @@
       <v-divider></v-divider>
       <v-list dense>
         <v-list-item
-          v-for="(page, index) in menu_misc"
+          v-for="(page, index) in menuMisc"
           @click="goTo(page)"
           :key="index"
         >
@@ -67,11 +67,11 @@ export default {
     drawer: true,
     showAbout: false,
     pageName: 'Home',
-    menu_main: [
+    menuMain: [
       { name: 'Home', path: '/', icon: 'mdi-home' }
     ],
-    menu_misc: [
-      { name: 'Elsewhere', path: '/else-where', icon: 'mdi-console' }
+    menuMisc: [
+      { name: 'BlankSlate', path: '/blank', icon: 'mdi-billboard' }
     ]
   })
 }
