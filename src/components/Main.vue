@@ -10,6 +10,7 @@
       </v-col>
       <v-col>
         <div class="text-h1">Daikon</div>
+        <v-btn color="primary" @click="openGitHub">View on GitHub</v-btn>
       </v-col>
     </v-row>
     <v-row>
@@ -53,6 +54,10 @@ export default {
         .then((data) => {
           this.output = data
         })
+    },
+
+    openGitHub: function () {
+      window.Main.newWindow('https://github.com/ccaroon/daikon')
     }
   },
 

@@ -6,6 +6,12 @@ contextBridge.exposeInMainWorld('Napiform', {
   }
 })
 
+contextBridge.exposeInMainWorld('Main', {
+  newWindow: (location, width, height) => {
+    ipcRenderer.invoke('main:newWindow', location, width, height)
+  }
+})
+
 contextBridge.exposeInMainWorld('NodeJS', { process })
 
 contextBridge.exposeInMainWorld('Modules', {
