@@ -1,6 +1,6 @@
 'use strict'
 
-import { app, protocol, screen, BrowserWindow } from 'electron'
+import { app, protocol, screen, BrowserWindow, Menu, MenuItem } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
 import path from 'path'
@@ -31,10 +31,36 @@ async function createWindow () {
     }
   })
 
+  // Add Context Menu
+  const menu = new Menu()
+  menu.append(new MenuItem({
+    label: 'Copy',
+    role: 'copy'
+  }))
+  menu.append(new MenuItem({
+    label: 'Paste',
+    role: 'paste'
+  }))
+  menu.append(new MenuItem({
+    type: 'separator'
+  }))
+  menu.append(new MenuItem({
+    label: 'Dev Tools',
+    role: 'toggleDevTools'
+  }))
+
+  win.webContents.on('context-menu',
+    (event, click) => {
+      event.preventDefault()
+      menu.popup(win.webContents)
+    },
+    false
+  )
+
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
     await win.loadURL(process.env.WEBPACK_DEV_SERVER_URL)
-    if (!process.env.IS_TEST) win.webContents.openDevTools()
+    // if (!process.env.IS_TEST) win.webContents.openDevTools()
   } else {
     createProtocol('app')
     // Load the index.html when not in development

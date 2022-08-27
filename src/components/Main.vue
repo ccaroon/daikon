@@ -10,7 +10,12 @@
       </v-col>
       <v-col>
         <div class="text-h1">Daikon</div>
-        <v-btn color="primary" @click="openGitHub">View on GitHub</v-btn>
+        <v-btn color="primary" @click="openGitHub">
+          <v-icon left>mdi-github</v-icon>
+          View on GitHub
+        </v-btn>
+        <v-icon>mdi-anchor</v-icon>
+        <v-icon>fa-frog</v-icon>
       </v-col>
     </v-row>
     <v-row>
