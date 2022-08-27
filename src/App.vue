@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-navigation-drawer v-model="drawer" app dark mini-variant clipped>
+    <v-navigation-drawer v-model="drawer" app dark mini-variant mobile-breakpoint="640">
       <v-list dense>
         <v-list-item
           v-for="(page, index) in menuMain"

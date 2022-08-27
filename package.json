@@ -2,7 +2,7 @@
   "name": "Daikon",
   "codename": "Root Veggie",
   "icon": "fa-carrot",
-  "version": "1.0.0",
+  "version": "1.0.0a",
   "author": "Craig N. Caroon",
   "buildDate": "August 22, 2022",
   "description": "Sample Electron+Vue+Vuetify App",

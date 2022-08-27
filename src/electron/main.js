@@ -1,6 +1,6 @@
 'use strict'
 
-import { app, protocol, BrowserWindow } from 'electron'
+import { app, protocol, screen, BrowserWindow } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
 import path from 'path'
@@ -15,10 +15,12 @@ protocol.registerSchemesAsPrivileged([
 ])
 
 async function createWindow () {
+  const display = screen.getPrimaryDisplay()
+
   // Create the browser window.
   const win = new BrowserWindow({
-    width: 1600,
-    height: 1200,
+    width: display.size.width * 0.70,
+    height: display.size.height * 0.90,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
 
