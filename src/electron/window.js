@@ -1,10 +1,12 @@
-import { BrowserWindow, Menu, MenuItem } from 'electron'
+import { screen, BrowserWindow, Menu, MenuItem } from 'electron'
 
 export default {
-  new: function (location, width = 1024, height = 768) {
+  new: function (location, width = null, height = null) {
+    const display = screen.getPrimaryDisplay()
+
     const win = new BrowserWindow({
-      width,
-      height,
+      width: width || display.size.width * 0.60,
+      height: height || display.size.height * 0.80,
       autoHideMenuBar: true
     })
 
