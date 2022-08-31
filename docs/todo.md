@@ -1,15 +1,15 @@
 # ToDo
 
 * [ ] Menu example using About
-* [ ] FontAwesome icons not working in built app -- shows a black square
+* [x] FontAwesome icons not working in built app -- shows a black square
 * [ ] Main Window
-    - Context Menu
+    - [x] Context Menu
       - [x] Copy
       - [x] Paste
       - [x] Dev Tools
 * [ ] Sub-Windows
     - [x] Hide Main Menu
-    - Context Menu
+    - [x] Context Menu
       - [x] Back
       - [x] Reload
       - [x] Copy

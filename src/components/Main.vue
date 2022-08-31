@@ -14,8 +14,6 @@
           <v-icon left>mdi-github</v-icon>
           View on GitHub
         </v-btn>
-        <v-icon>mdi-anchor</v-icon>
-        <v-icon>fa-frog</v-icon>
       </v-col>
     </v-row>
     <v-row>

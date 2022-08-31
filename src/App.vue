@@ -1,6 +1,12 @@
 <template>
   <v-app>
-    <v-navigation-drawer v-model="drawer" app dark mini-variant mobile-breakpoint="640">
+    <v-navigation-drawer
+      v-model="drawer"
+      app
+      dark
+      mini-variant
+      mobile-breakpoint="640"
+    >
       <v-list dense>
         <v-list-item
           v-for="(page, index) in menuMain"
@@ -71,7 +77,7 @@ export default {
       { name: 'Home', path: '/', icon: 'mdi-home' }
     ],
     menuMisc: [
-      { name: 'BlankSlate', path: '/blank', icon: 'mdi-billboard' }
+      { name: 'BlankSlate', path: '/blank', icon: 'fa-chalkboard' }
     ]
   })
 }
