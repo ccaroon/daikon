@@ -74,7 +74,7 @@
 </template>
 
 <script>
-import pkgJson from '../../package.json'
+import pkgJson from '../../../package.json'
 
 export default {
   name: 'AboutDialog',

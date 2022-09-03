@@ -5,7 +5,7 @@ import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
 import path from 'path'
 
-import IPC from './ipc'
+import IPC from './lib/ipc'
 
 const isDevelopment = process.env.NODE_ENV !== 'production'
 

@@ -46,8 +46,8 @@ communicate with the Main process.
 The "Transmogrify" button on the app's main screen is an example of using **Context
 Isolation**.
 
-See the `src/electron/preload.js`, `src/electron/main.js` and `src/electron/Napiform.js`
-code for how that is set up.
+See the `src/main/preload.js`, `src/main/ipc.js`, `src/main/main.js` and
+`src/main/Napiform.js` code for how that is set up.
 
 -----
 
@@ -61,13 +61,13 @@ More Security information [here](https://www.electronjs.org/docs/latest/tutorial
 
 ## Things You Might Want to Update
 * `README.md`
-* `name`, `author`, `description`, etc in `package.json`
+* `package.json` (`name`, `author`, `description`, etc)
 * Icons in `build/`
 * Images and `favicon.ico` in `public/`
-* Logos images in `src/assets`
-* `src/Components/*`
-* Routes in `src/router/index.js`
-* `src/App.vue` -- Application container
+* Logo images in `src/renderer/assets`
+* `src/renderer/Components/*`
+* Routes in `src/renderer/router/index.js`
+* `src/renderer/App.vue` -- Application container
 
 
 [Electron]: https://www.electronjs.org/docs/latest/

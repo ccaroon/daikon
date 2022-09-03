@@ -11,8 +11,9 @@ module.exports = defineConfig({
     // },
     // chainWebpackRenderProcess: (config) => { },
     electronBuilder: {
-      preload: 'src/electron/preload.js',
-      mainProcessFile: 'src/electron/main.js',
+      preload: 'src/main/preload.js',
+      mainProcessFile: 'src/main/main.js',
+      rendererProcessFile: 'src/renderer/main.js',
       nodeIntegration: false,
       builderOptions: {
         // options here will be merged with default electron-builder options
