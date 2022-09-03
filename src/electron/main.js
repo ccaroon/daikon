@@ -6,6 +6,7 @@ import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
 import path from 'path'
 
 import IPC from './ipc'
+import AppMenu from './Menu'
 
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
@@ -30,6 +31,8 @@ async function createWindow () {
       contextIsolation: !process.env.ELECTRON_NODE_INTEGRATION
     }
   })
+
+  AppMenu.attach()
 
   // Add Context Menu
   const menu = new Menu()
