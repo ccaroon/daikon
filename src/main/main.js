@@ -6,6 +6,7 @@ import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
 import path from 'path'
 
 import IPC from './lib/ipc'
+import WindowHelper from './lib/window'
 
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
@@ -66,6 +67,13 @@ async function createWindow () {
     // Load the index.html when not in development
     win.loadURL('app://./index.html')
   }
+
+  // Links that open new windows on target="_blank" use this
+  win.webContents.on('new-window', function (event, url) {
+    event.preventDefault()
+    // shell.openExternal(url) // Open in system default browser
+    WindowHelper.new(url)
+  })
 }
 
 // Quit when all windows are closed.
