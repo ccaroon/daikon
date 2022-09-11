@@ -7,6 +7,10 @@
   "buildDate": "September 03, 2022",
   "description": "Sample Electron+Vue+Vuetify App",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ccaroon/daikon"
+  },
   "scripts": {
     "build": "vue-cli-service electron:build",
     "build:clean": "rm -rf dist_electron/",

@@ -11,7 +11,10 @@
         </a>
       </v-col>
       <v-col>
-        <div class="text-h1">Daikon</div>
+        <div class="text-h1">{{ pkgJson.name }}
+        </div>
+        <div class="text--subtitle"><v-icon color="black">{{ pkgJson.icon }}</v-icon>{{ pkgJson.codename }}</div>
+        <div class="text--subtitle2 text--secondary">{{ pkgJson.description }}</div>
         <v-btn color="primary" @click="openGitHub">
           <v-icon left>mdi-github</v-icon>
           View on GitHub
@@ -50,6 +53,8 @@
 </template>
 
 <script>
+import pkgJson from '../../../package.json'
+
 export default {
   name: 'MainScreen',
 
@@ -62,11 +67,12 @@ export default {
     },
 
     openGitHub: function () {
-      window.Main.newWindow('https://github.com/ccaroon/daikon')
+      window.Main.newWindow(pkgJson.repository.url)
     }
   },
 
   data: () => ({
+    pkgJson,
     message1: 'Hello, World!',
     message2: 'This is the way the World Ends!',
     output: null
