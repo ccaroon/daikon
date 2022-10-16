@@ -1,16 +1,16 @@
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
   pluginOptions: {
-    // chainWebpackMainProcess: (config) => {
-    //   config.module
-    //     .rule('style')
-    //     .test(/\.(sass|scss|css)$/)
-    //     .use(['style-loader', 'css-loader', 'sass-loader'])
-    //     .loader(['style-loader', 'css-loader', 'sass-loader'])
-    //     .end()
-    // },
-    // chainWebpackRenderProcess: (config) => { },
     electronBuilder: {
+      // chainWebpackMainProcess: (config) => {
+      //   config.module
+      //     .rule('style')
+      //     .test(/\.(sass|scss|css)$/)
+      //     .use(['style-loader', 'css-loader', 'sass-loader'])
+      //     .loader(['style-loader', 'css-loader', 'sass-loader'])
+      //     .end()
+      // },
+      // chainWebpackRenderProcess: (config) => { },
       preload: 'src/main/preload.js',
       mainProcessFile: 'src/main/main.js',
       rendererProcessFile: 'src/renderer/main.js',
