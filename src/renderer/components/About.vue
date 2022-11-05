@@ -89,6 +89,9 @@ export default {
 
   data () {
     const process = window.NodeJS.process
+    const mode = process.env.NODE_ENV === 'development'
+      ? 'Development'
+      : 'Production'
 
     const data = {
       appInfo: pkgJson,
@@ -101,7 +104,7 @@ export default {
       systemInfo: [
         { name: pkgJson.name, value: `v${pkgJson.version} | ${pkgJson.codename}`, icon: pkgJson.icon },
         { name: 'Platform', value: process.platform, icon: 'mdi-laptop' },
-        { name: 'Mode', value: process.env.NODE_ENV, icon: 'mdi-cogs' },
+        { name: 'Mode', value: mode, icon: 'mdi-cogs' },
         { name: 'Build Date', value: pkgJson.buildDate, icon: 'mdi-wrench' }
       ]
     }

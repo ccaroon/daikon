@@ -5,8 +5,8 @@ import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
 import path from 'path'
 
-import IPC from './lib/ipc'
-import WindowHelper from './lib/window'
+import ipc from './lib/ipc'
+import windowHelper from './lib/windowHelper'
 
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
@@ -69,10 +69,11 @@ async function createWindow () {
   }
 
   // Links that open new windows on target="_blank" use this
-  win.webContents.on('new-window', function (event, url) {
-    event.preventDefault()
-    // shell.openExternal(url) // Open in system default browser
-    WindowHelper.new(url)
+  win.webContents.setWindowOpenHandler((details) => {
+    // Open a new window like **we** want
+    windowHelper.new(details.url)
+    // Prevent the default window from opening.
+    return { action: 'deny' }
   })
 }
 
@@ -104,7 +105,7 @@ app.on('ready', async () => {
     }
   }
 
-  IPC.registerHandlers()
+  ipc.registerHandlers()
   createWindow()
 })
 
