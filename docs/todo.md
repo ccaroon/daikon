@@ -1,6 +1,6 @@
 # ToDo
 
-* [ ] Menu example using About
+* [x] Menu example using About
 * [x] FontAwesome icons not working in built app -- shows a black square
 * [x] Main Window
     - [x] Context Menu
