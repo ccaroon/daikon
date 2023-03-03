@@ -47,6 +47,7 @@ export default {
   components: { About },
   mounted () {
     this.bindShortcutKeys()
+    this.registerMenuHandlers()
   },
 
   methods: {
@@ -56,6 +57,13 @@ export default {
       Mousetrap.bind(['ctrl+shift+/', 'meta+shift+/'], () => {
         self.showAbout = true
         return false
+      })
+    },
+
+    registerMenuHandlers: function () {
+      // Help
+      window.Menu.registerHandler('menu-help-about', (event) => {
+        this.showAbout = true
       })
     },
 
